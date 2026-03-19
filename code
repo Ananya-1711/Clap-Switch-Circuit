@@ -1,0 +1,26 @@
+const int micPin = 2;     
+const int relayOut = 8;     
+bool lightStatus = false;  
+unsigned long prevTime = 0; 
+const int delayGap = 250;   
+void setup() {
+  pinMode(micPin, INPUT);
+  pinMode(relayOut, OUTPUT);
+  digitalWrite(relayOut, LOW); // Initial state OFF
+  Serial.begin(9600);
+  Serial.println("System Ready: Clap to toggle light ");
+}
+void loop() {
+  int clapDetected = digitalRead(micPin);
+  // Check for clap and debounce condition
+  if (clapDetected == HIGH && (millis() - prevTime) > delayGap) {    
+    lightStatus = !lightStatus; 
+    if (lightStatus) {
+      digitalWrite(relayOut, HIGH);
+      Serial.println("Light Turned ON ");
+    } else {
+      digitalWrite(relayOut, LOW);
+      Serial.println("Light Turned OFF ");
+    prevTime = millis();
+  }
+}
