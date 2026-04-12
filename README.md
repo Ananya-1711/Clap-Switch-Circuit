@@ -1,4 +1,4 @@
-# Clap-Switch-Circuit
+# Clap Switch Circuit
 
 ## Overview
 
