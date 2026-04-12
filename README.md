@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project simulates a **clap-controlled toggle switch** using a potentiometer in Arduino.
+This project simulates a **clap controlled toggle switch** using a potentiometer in Arduino.
 Since real sound input is not available in simulation environments like Tinkercad, the potentiometer is used to mimic a **clap signal (sudden voltage spike)**.
 Each time the input exceeds a defined threshold, the LED **toggles its state (ON ↔ OFF)** — similar to how a clap switch works.
 
